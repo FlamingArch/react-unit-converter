@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.page {
+  grid-template-rows: clamp(128px, 50%, 320px) 1fr;
+}

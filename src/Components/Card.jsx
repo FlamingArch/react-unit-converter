@@ -1,6 +1,6 @@
 import React from "react";
 
-function Card({ heading, content }) {
+export function Card({ heading, content, children }) {
   return (
     <div
       style={{ width: "clamp(100px, auto, 600px)" }}
@@ -12,4 +12,16 @@ function Card({ heading, content }) {
   );
 }
 
-export default Card
+export function InputCard({ text, onChange, children }) {
+  return (
+    <div className="flex justify-between border-2 border-transparent focus-within:shadow-md px-3 py-2 bg-white z-10 transition-all hover:shadow-lg fixed w-full overflow-clip">
+      {children}
+      <input
+        className="w-full bg-transparent outline-none text-right"
+        type="number"
+        value={text}
+        onChange={onChange}
+      />
+    </div>
+  );
+}
