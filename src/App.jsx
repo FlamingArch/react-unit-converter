@@ -9,14 +9,14 @@ import Button from "./Components/Button";
 
 import _ from "lodash";
 
-import Lengths from "./Model/Lengths";
+import Lengths from "./Model/Length";
 
 import { ChevronDownIcon } from "@heroicons/react/solid";
 
 const App = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [selectedUnit, setSelectedUnit] = useState("Meters");
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(0);
 
   const [result, setResult] = useState({
     meters: 0,
@@ -43,8 +43,7 @@ const App = () => {
       inches: lengthHandler.getValue("inches"),
       yards: lengthHandler.getValue("yards"),
     });
-  }, [value]);
-
+  }, [value, selectedUnit]);
 
   return (
     <Page>
