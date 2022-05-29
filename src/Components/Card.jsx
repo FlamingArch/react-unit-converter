@@ -14,13 +14,14 @@ export function Card({ heading, content, children }) {
 
 export function InputCard({ text, onChange, children }) {
   return (
-    <div className="flex justify-between border-2 border-transparent focus-within:shadow-md px-3 py-2 bg-white z-10 transition-all hover:shadow-lg fixed w-full overflow-clip">
+    <div className="flex justify-between border-2 border-transparent focus-within:shadow-md bg-white z-10 transition-all hover:shadow-lg fixed w-full overflow-clip">
       {children}
       <input
-        className="w-full bg-transparent outline-none text-right"
-        type="number"
+        className="w-full bg-transparent outline-none text-right px-4 py-3"
+        type="text"
         value={text}
         onChange={onChange}
+        placeholder="Enter Value"
       />
     </div>
   );

@@ -5,20 +5,19 @@ const DropDown = ({ visible, items }) => {
     "p-1 px-2 m-1 mx-2 hover:bg-blue-600 hover:text-white hover:shadow-xl rounded-xl fixed";
 
   return (
-    <div
-      className={
-        "fixed flex flex-col shadow-xl rounded-xl overflow-clip" +
-        visible
-          ? ""
-          : "hidden"
-      }
-    >
-      {items.map((e, idx) => (
-        <p className={dropdown_item_style} onClick={e.action} key={idx}>
-          {e.label}
-        </p>
-      ))}
-    </div>
+    visible && (
+      <div className="fixed z-100 flex flex-col bg-white rounded-xl p-2 shadow-2xl">
+        {items.map((e, idx) => (
+          <p
+            className="px-4 py-2 hover:bg-blue-500 rounded-lg hover:shadow-xl hover:text-white"
+            key={idx}
+            onClick={e.action}
+          >
+            {e.label}
+          </p>
+        ))}
+      </div>
+    )
   );
 };
 
