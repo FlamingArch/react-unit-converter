@@ -12,7 +12,7 @@ export function Card({ heading, content, children }) {
   );
 }
 
-export function InputCard({ text, onChange, children }) {
+export function InputCard({ text, onChange, children, isInvalidInput }) {
   return (
     <div className="flex justify-between border-2 border-transparent focus-within:shadow-md bg-white z-10 transition-all hover:shadow-lg fixed w-full overflow-clip">
       {children}

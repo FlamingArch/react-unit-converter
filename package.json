@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
+    "@types/lodash": "^4.14.182",
     "autoprefixer": "^10.4.7",
+    "lodash": "^4.17.21",
     "postcss": "^8.4.14",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
