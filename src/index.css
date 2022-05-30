@@ -5,3 +5,33 @@
 .page {
   grid-template-rows: clamp(128px, 50%, 320px) 1fr;
 }
+
+.tabbar {
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+}
+
+
+.tab {
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+  align-content: center;
+  color: white;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 6px;
+  transition: background-color 0.1s ease-in-out;
+}
+
+
+.tabHover:hover {
+  background-color: #cccccccc;
+}
+
+.selected {
+  background-color: white;
+  color: black !important;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.24);
+}

@@ -1,4 +1,4 @@
-class Volume {
+export default class Volume {
   liters = 0;
 
   setValues(unit: string, val: number) {

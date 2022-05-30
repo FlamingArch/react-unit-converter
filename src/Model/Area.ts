@@ -1,4 +1,4 @@
-class Area {
+export default class Area {
   metersq = 0;
 
   setValue(unit: string, val: number) {

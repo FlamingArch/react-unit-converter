@@ -1,4 +1,4 @@
-class Temperature {
+export default class Temperature {
   celsius = 0;
 
   setValues(unit: string, val: number) {
