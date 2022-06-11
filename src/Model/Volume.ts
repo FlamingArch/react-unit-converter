@@ -1,5 +1,9 @@
 export default class Volume {
-  liters = 0;
+  private liters = 0;
+
+  units = ["liters", "milliliters", "cubic-meters", "cubic-inches", "cubic-feet", "cubic-yards"]
+
+  constructor() { }
 
   setValues(unit: string, val: number) {
     switch (unit.toLowerCase()) {
@@ -9,16 +13,16 @@ export default class Volume {
       case "milliliters":
         this.liters = val / 1000;
         break;
-      case "cubicmeters":
+      case "cubic-meters":
         this.liters = val * 1000;
         break;
-      case "cubicinches":
+      case "cubic-inches":
         this.liters = val * 0.0163871;
         break;
-      case "cubicfeet":
+      case "cubic-feet":
         this.liters = val * 28.3168;
         break;
-      case "cubicyards":
+      case "cubic-yards":
         this.liters = val * 764.554858;
         break;
     }
@@ -30,13 +34,13 @@ export default class Volume {
         return this.liters;
       case "milliliters":
         return this.liters * 1000;
-      case "cubicmeters":
+      case "cubic-meters":
         return this.liters / 1000;
-      case "cubicinches":
+      case "cubic-inches":
         return this.liters / 0.0163871;
-      case "cubicfeet":
+      case "cubic-feet":
         return this.liters / 28.3168;
-      case "cubicyards":
+      case "cubic-yards":
         return this.liters / 764.554858;
     }
   }

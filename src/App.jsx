@@ -1,39 +1,23 @@
-import React, { useState, useEffect } from "react";
-
-import Heading from "./Components/Heading";
-import TopBar from "./Components/TopBar";
-import Page from "./Components/Page";
-
-import _ from "lodash";
-
-import LengthPage from "./Components/Pages/Length";
-import TabBar, { Tab, TabView, TabViewProvider } from "./Components/TabView";
-import { ScaleIcon } from "@heroicons/react/solid";
+import React from "react";
+import Rail from "./Components/Rail";
 
 const App = () => {
   const iconStyles = "w-4 h-4 text-white";
 
+  const navigtionItems = [
+    { icon: LengthIcon, label: "Length" },
+    { icon: AreaIcon, label: "Area" },
+    { icon: VolumeIcon, label: "Volume" },
+    { icon: TemperatureIcon, label: "Temperature" },
+  ]
+
   return (
-    <Page>
-      <TabViewProvider>
-        <TopBar>
-          <Heading>Unit Converter</Heading>
-          <TabBar>
-            <Tab icon={<ScaleIcon className={iconStyles} index={0} />} />
-            <Tab icon={<ScaleIcon className={iconStyles} index={1} />} />
-            <Tab icon={<ScaleIcon className={iconStyles} index={2} />} />
-            <Tab icon={<ScaleIcon className={iconStyles} index={3} />} />
-            <Tab icon={<ScaleIcon className={iconStyles} index={4} />} />
-          </TabBar>
-        </TopBar>
-        <TabView>
-          <LengthPage />
-          <Area />
-          <LengthPage />
-          <LengthPage />
-        </TabView>
-      </TabViewProvider>
-    </Page>
+    <RailNavigation items={navigationIcons}>
+      <LengthPage/>
+      <AreaPage/>
+      <VolumePage/>
+      <TemperaturePage/>
+    </RailNavigation >
   );
 };
 

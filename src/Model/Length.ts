@@ -1,7 +1,9 @@
 export default class Lengths {
   private meters = 0;
 
-  constructor() {}
+  units = ["meters", "centimeters", "kilometers", "miles", "inches", "yards"]
+
+  constructor() { }
 
   setValue(unit: string, val: number) {
     switch (unit.toLowerCase()) {

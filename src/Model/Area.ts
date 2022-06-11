@@ -1,24 +1,28 @@
 export default class Area {
-  metersq = 0;
+  private metersq = 0;
+
+  units = ["meter-square", "centimeter-square", "kilometer-square", "mile-square", "inches-square", "yards-square"]
+
+  constructor() { }
 
   setValue(unit: string, val: number) {
     switch (unit.toLowerCase()) {
-      case "metersq":
+      case "meter-square":
         this.metersq = val;
         break;
-      case "centimetersq":
+      case "centimeter-square":
         this.metersq = val / 100;
         break;
-      case "kilometersq":
+      case "kilometer-square":
         this.metersq = val * 1000000;
         break;
-      case "milesq":
+      case "mile-square":
         this.metersq = val * 2589988.110336;
         break;
-      case "inchessq":
+      case "inches-square":
         this.metersq = val * 0.00064516;
         break;
-      case "yardssq":
+      case "yards-square":
         this.metersq = val * 0.83612736;
         break;
     }
@@ -26,17 +30,17 @@ export default class Area {
 
   getValue(unit: string) {
     switch (unit.toLowerCase()) {
-      case "metersq":
+      case "meter-square":
         return this.metersq;
-      case "centimetersq":
+      case "centimeter-square":
         return this.metersq * 100;
-      case "kilometersq":
+      case "kilometer-square":
         return this.metersq / 1000000;
-      case "milesq":
+      case "mile-square":
         return this.metersq / 2589988.110336;
-      case "inchessq":
+      case "inches-square":
         return this.metersq / 0.00064516;
-      case "yardssq":
+      case "yards-square":
         return this.metersq / 0.83612736;
     }
   }

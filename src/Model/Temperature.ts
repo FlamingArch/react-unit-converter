@@ -1,5 +1,9 @@
-export default class Temperature {
-  celsius = 0;
+export default class Temperatures {
+  private celsius = 0;
+
+  units = ["celsius", "fahrenheit", "kelvin"]
+
+  constructor() { }
 
   setValues(unit: string, val: number) {
     switch (unit.toLowerCase()) {

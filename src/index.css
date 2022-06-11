@@ -1,37 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.page {
-  grid-template-rows: clamp(128px, 50%, 320px) 1fr;
-}
-
-.tabbar {
-  display: flex;
-  flex-direction: row;
-  padding: 16px;
-}
-
-
-.tab {
+.rail {
   display: grid;
-  grid-template-columns: auto;
-  align-items: center;
-  align-content: center;
-  color: white;
-  font-size: 14px;
-  padding: 10px;
-  border-radius: 6px;
-  transition: background-color 0.1s ease-in-out;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto;
+  width: auto;
+  height: auto;
 }
 
-
-.tabHover:hover {
-  background-color: #cccccccc;
-}
-
-.selected {
-  background-color: white;
-  color: black !important;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.24);
-}
