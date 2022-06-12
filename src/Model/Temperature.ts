@@ -1,3 +1,5 @@
+import _ from "lodash"
+
 export default class Temperatures {
   private celsius = 0;
 
@@ -6,7 +8,7 @@ export default class Temperatures {
   constructor() { }
 
   setValues(unit: string, val: number) {
-    switch (unit.toLowerCase()) {
+    switch (_.lowerCase(unit)) {
       case "celsius":
         this.celsius = val;
         break;
@@ -20,7 +22,7 @@ export default class Temperatures {
   }
 
   getValues(unit: string) {
-    switch (unit.toLowerCase()) {
+    switch (_.lowerCase(unit)) {
       case "celsius":
         return this.celsius;
       case "fahrenheit":

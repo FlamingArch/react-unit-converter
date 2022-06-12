@@ -16,8 +16,7 @@ const Navigation = ({ items, children }) => {
                     />
                 ))}
             </NavBar>
-            <p>Sup</p>
-            {/* {children[page]} */}
+            {children[page]}
         </div>
     )
 }

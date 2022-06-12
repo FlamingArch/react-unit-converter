@@ -1,3 +1,5 @@
+import _ from "lodash"
+
 export default class Lengths {
   private meters = 0;
 
@@ -6,7 +8,7 @@ export default class Lengths {
   constructor() { }
 
   setValues(unit: string, val: number) {
-    switch (unit.toLowerCase()) {
+    switch (_.lowerCase(unit)) {
       case "meters":
         this.meters = val;
         break;
@@ -29,7 +31,7 @@ export default class Lengths {
   }
 
   getValues(unit: string) {
-    switch (unit.toLowerCase()) {
+    switch (_.lowerCase(unit)) {
       case "meters":
         return this.meters;
       case "centimeters":

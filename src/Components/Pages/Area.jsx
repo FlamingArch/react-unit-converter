@@ -2,6 +2,12 @@ import React, { useState } from 'react'
 import Areas from '../../Model/Area';
 import _ from "lodash"
 
+import Page from '../Views/Page'
+import ListItem from '../Views/ListItem';
+import Text from '../Views/Text';
+import TextField from '../Views/TextField';
+import Picker from '../Views/Picker';
+
 const AreaPage = () => {
     const [text, setText] = useState(0.0);
 

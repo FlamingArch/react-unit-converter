@@ -1,3 +1,5 @@
+import _ from "lodash"
+
 export default class Volume {
   private liters = 0;
 
@@ -6,7 +8,7 @@ export default class Volume {
   constructor() { }
 
   setValues(unit: string, val: number) {
-    switch (unit.toLowerCase()) {
+    switch (_.lowerCase(unit)) {
       case "liters":
         this.liters = val;
         break;
@@ -29,7 +31,7 @@ export default class Volume {
   }
 
   getValues(unit: string) {
-    switch (unit.toLowerCase()) {
+    switch (_.lowerCase(unit)) {
       case "liters":
         return this.liters;
       case "milliliters":

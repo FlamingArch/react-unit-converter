@@ -1,3 +1,5 @@
+import _ from "lodash"
+
 export default class Area {
   private metersq = 0;
 
@@ -6,7 +8,7 @@ export default class Area {
   constructor() { }
 
   setValues(unit: string, val: number) {
-    switch (unit.toLowerCase()) {
+    switch (_.lowerCase(unit)) {
       case "meter-square":
         this.metersq = val;
         break;
@@ -29,7 +31,7 @@ export default class Area {
   }
 
   getValues(unit: string) {
-    switch (unit.toLowerCase()) {
+    switch (_.lowerCase(unit)) {
       case "meter-square":
         return this.metersq;
       case "centimeter-square":
