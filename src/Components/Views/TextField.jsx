@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const TextField = ({ alignment, text, onChange }) => {
   return (
-    <input style={{ textAlign: alignment }} className='textfield' onChange={(e) => onChange(e.target.value)} placeholder="Enter Value" />
+    <input style={{ textAlign: alignment }} type="number" className='textfield' onChange={(e) => onChange(e.target.value)} placeholder="Enter Value" />
   )
 }
 
