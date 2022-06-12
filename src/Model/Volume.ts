@@ -8,7 +8,7 @@ export default class Volume {
   constructor() { }
 
   setValues(unit: string, val: number) {
-    switch (_.lowerCase(unit)) {
+    switch (unit) {
       case "liters":
         this.liters = val;
         break;
@@ -31,7 +31,7 @@ export default class Volume {
   }
 
   getValues(unit: string) {
-    switch (_.lowerCase(unit)) {
+    switch (unit) {
       case "liters":
         return this.liters;
       case "milliliters":
@@ -44,6 +44,8 @@ export default class Volume {
         return this.liters / 28.3168;
       case "cubic-yards":
         return this.liters / 764.554858;
+      default:
+        return "Error"
     }
   }
 

@@ -8,7 +8,7 @@ export default class Lengths {
   constructor() { }
 
   setValues(unit: string, val: number) {
-    switch (_.lowerCase(unit)) {
+    switch (unit) {
       case "meters":
         this.meters = val;
         break;
@@ -31,7 +31,7 @@ export default class Lengths {
   }
 
   getValues(unit: string) {
-    switch (_.lowerCase(unit)) {
+    switch (unit) {
       case "meters":
         return this.meters;
       case "centimeters":
@@ -44,6 +44,8 @@ export default class Lengths {
         return this.meters / 0.0254;
       case "yards":
         return this.meters / 0.9144;
+      default:
+        return "Error"
     }
   }
 

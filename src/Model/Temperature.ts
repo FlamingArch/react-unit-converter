@@ -8,7 +8,7 @@ export default class Temperatures {
   constructor() { }
 
   setValues(unit: string, val: number) {
-    switch (_.lowerCase(unit)) {
+    switch (unit) {
       case "celsius":
         this.celsius = val;
         break;
@@ -22,13 +22,15 @@ export default class Temperatures {
   }
 
   getValues(unit: string) {
-    switch (_.lowerCase(unit)) {
+    switch (unit) {
       case "celsius":
         return this.celsius;
       case "fahrenheit":
         return (this.celsius * 9) / 5 + 32;
       case "kelvin":
         return this.celsius + 273.15;
+      default:
+        return "Error"
     }
   }
 

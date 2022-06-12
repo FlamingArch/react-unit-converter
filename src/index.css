@@ -8,10 +8,17 @@
   --object: #FFFBFE;
 }
 
+html {
+  background-color: #F6EDFF;
+}
+
 .app-split {
   display: grid;
   background-color: #F6EDFF;
   grid-template-columns: auto 1fr;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 600px) {
@@ -104,7 +111,7 @@
 
 .page {
   width: auto;
-  height: 100vh;
+  height: auto;
   overflow: hidden;
 }
 
@@ -191,7 +198,7 @@
   align-items: center;
   color: #7F67BE;
   padding: 0.25rem 1rem;
-  border-radius: 1rem;
+  border-radius: 999rem;
   background-color: #EADDFF;
 }
 
@@ -226,6 +233,10 @@
 .picker .dropdown p:hover {
   cursor: pointer;
   background-color: #1C1B1F1D;
+}
+
+.hide {
+  display: none !important;
 }
 
 input::-webkit-outer-spin-button,

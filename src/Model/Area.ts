@@ -8,7 +8,7 @@ export default class Area {
   constructor() { }
 
   setValues(unit: string, val: number) {
-    switch (_.lowerCase(unit)) {
+    switch (unit) {
       case "meter-square":
         this.metersq = val;
         break;
@@ -27,11 +27,13 @@ export default class Area {
       case "yards-square":
         this.metersq = val * 0.83612736;
         break;
+      default:
+        console.log("setValues(): Unit Error: Unknown Unit: " + unit)
     }
   }
 
   getValues(unit: string) {
-    switch (_.lowerCase(unit)) {
+    switch (unit) {
       case "meter-square":
         return this.metersq;
       case "centimeter-square":
@@ -44,6 +46,8 @@ export default class Area {
         return this.metersq / 0.00064516;
       case "yards-square":
         return this.metersq / 0.83612736;
+      default:
+        return "getValues(): Unit Error: Unknown Unit: " + unit
     }
   }
 

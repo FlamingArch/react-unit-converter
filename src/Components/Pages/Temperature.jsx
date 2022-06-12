@@ -10,16 +10,24 @@ import Picker from '../Views/Picker';
 
 const TemperaturePage = () => {
     const [value, setValue] = useState(0.0);
-    const [unit, setUnit] = useState(0.0);
+    const [unit, setUnit] = useState("celsius");
 
     const controller = new Temperatures();
-
-    console.log(`UNITS: ${controller.units.map(e => _.capitalize(e))}`)
 
     return (
         <Page title="Temperature">
             <ListItem input={true}>
-                <Picker type="dropdown" items={controller.units} />
+                <Picker
+                    type="dropdown"
+                    items={controller.units.map(e => _.capitalize(e))}
+                    selected={controller.units.indexOf(unit)}
+                    onChange={(e) => {
+                        setUnit("")
+                        let unit = _.kebabCase(_.lowerCase(e));
+                        console.log(`SELECT UNIT: ${unit}`)
+                        setUnit(unit)
+                    }}
+                />
                 <TextField type="number" alignment="left" text={`${value}`} onChange={(e) => {
                     setValue(_.toNumber(e));
                     console.log(value);

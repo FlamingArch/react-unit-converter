@@ -1,20 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ExpandIcon from '../../Icons/expand.svg'
 
-const Picker = ({ items, selected, type }) => {
-  const [visible, setVisible] = useState(false)
+const Picker = ({ items, selected, type, onChange }) => {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    return () => setVisible(false)
+  }, [onChange])
+
 
   return (
-    <div className='picker' onClick={() => setVisible(true)}>
+    <div className={'picker ' + type} onClick={() => setVisible(true)}>
       {items[selected]}
       <img src={ExpandIcon} alt="" />
-      {visible ? <div className={`dropdown`}>
+      <div className={`dropdown ${visible ? '' : 'hide'}`}>
         {items.map((e, idx) => {
           return <p key={idx} onClick={() => {
-            setVisible(false)
+            onChange(items[idx])
           }}>{e}</p>
         })}
-      </div> : null}
+      </div>
     </div>
   )
 }
