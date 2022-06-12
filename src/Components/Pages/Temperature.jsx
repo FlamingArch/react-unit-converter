@@ -9,7 +9,8 @@ import TextField from '../Views/TextField';
 import Picker from '../Views/Picker';
 
 const TemperaturePage = () => {
-    const [text, setText] = useState(0.0);
+    const [value, setValue] = useState(0.0);
+    const [unit, setUnit] = useState(0.0);
 
     const controller = new Temperatures();
 
@@ -17,12 +18,12 @@ const TemperaturePage = () => {
         <Page tite="Temperature">
             <ListItem>
                 <Picker type="dropdown" items={controller.units} />
-                <TextField alignment="left" setter={setText}>{text}</TextField>
+                <TextField alignment="left" setter={setValue}>{value}</TextField>
             </ListItem>
-            {controller.units.map(e, idx => {
+            {controller.units.map((e, idx) => {
                 <ListItem id={idx}>
                     <Text type="primary">{_.replace(_.startCase(e), "-", " ")}</Text>
-                    <Text type="secondary">{controller.getValue(e)}.</Text>
+                    <Text type="secondary">{controller.convertValue(value, unit, e)}.</Text>
                 </ListItem>
             })}
         </Page>

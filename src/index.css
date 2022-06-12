@@ -4,9 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  --object: #FFFBFE;
+}
+
 .app-split {
   display: grid;
-  background-color: #FFFBFE;
+  background-color: #F6EDFF;
   grid-template-columns: auto 1fr;
 }
 
@@ -36,7 +40,7 @@
   .navbar {
     position: fixed;
     bottom: 0;
-    background-color: #F6EDFF;
+    background-color: #EADDFF;
     grid-template-rows: auto;
     grid-template-columns: 0px 1fr 0px;
     width: 100vw;
@@ -78,7 +82,7 @@
 }
 
 .navbaritem .icon-container.active {
-  background-color: #E8DEF8;
+  background-color: #D0BCFF;
 }
 
 .navbaritem .icon-container.active:hover {
