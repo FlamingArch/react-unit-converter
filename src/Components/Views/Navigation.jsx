@@ -4,7 +4,7 @@ const Navigation = ({ items, children }) => {
     const [page, setPage] = useState(0);
 
     return (
-        <div>
+        <div className='app-split'>
             <NavBar>
                 {items.map((item, index) => (
                     <NavBarItem
