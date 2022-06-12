@@ -14,6 +14,8 @@ const LengthPage = () => {
 
     const controller = new Lengths();
 
+    console.log(`UNITS: ${controller.units.map(e => _.capitalize(e))}`)
+
     return (
         <Page title="Length">
             <ListItem input={true}>
@@ -23,22 +25,10 @@ const LengthPage = () => {
                     console.log(value);
                 }} />
             </ListItem>
-            <ListItem>Sample</ListItem>
-            <ListItem>Sample</ListItem>
-            <ListItem>Sample</ListItem>
-            <ListItem>Sample</ListItem>
-            <ListItem>Sample</ListItem>
-            <ListItem>Sample</ListItem>
-            <ListItem>Sample</ListItem>
-            <ListItem>Sample</ListItem>
-            <ListItem>Sample</ListItem>
-            <ListItem>Sample</ListItem>
-            <ListItem>Sample</ListItem>
-            <ListItem>Sample</ListItem>
             {controller.units.map((e, idx) => {
-                <ListItem id={idx}>
+                return <ListItem key={idx}>
                     <Text type="primary">{_.replace(_.startCase(e), "-", " ")}</Text>
-                    <Text type="secondary">{controller.convertValue(value, unit, e)}.</Text>
+                    <Text type="secondary">{controller.convertValue(value, unit, e)}</Text>
                 </ListItem>
             })}
         </Page>

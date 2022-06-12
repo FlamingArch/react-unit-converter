@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Text = ({ children }) => {
+const Text = ({ children, type }) => {
   return (
-    <div className='text'>{children}</div>
+    <div className={'text ' + type}>{children}</div>
   )
 }
 

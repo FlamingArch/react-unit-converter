@@ -14,16 +14,21 @@ const TemperaturePage = () => {
 
     const controller = new Temperatures();
 
+    console.log(`UNITS: ${controller.units.map(e => _.capitalize(e))}`)
+
     return (
         <Page title="Temperature">
-            <ListItem>
+            <ListItem input={true}>
                 <Picker type="dropdown" items={controller.units} />
-                <TextField alignment="left" setter={setValue}>{value}</TextField>
+                <TextField type="number" alignment="left" text={`${value}`} onChange={(e) => {
+                    setValue(_.toNumber(e));
+                    console.log(value);
+                }} />
             </ListItem>
             {controller.units.map((e, idx) => {
-                <ListItem id={idx}>
+                return <ListItem key={idx}>
                     <Text type="primary">{_.replace(_.startCase(e), "-", " ")}</Text>
-                    <Text type="secondary">{controller.convertValue(value, unit, e)}.</Text>
+                    <Text type="secondary">{controller.convertValue(value, unit, e)}</Text>
                 </ListItem>
             })}
         </Page>
