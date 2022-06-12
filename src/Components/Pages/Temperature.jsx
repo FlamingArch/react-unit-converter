@@ -15,7 +15,7 @@ const TemperaturePage = () => {
     const controller = new Temperatures();
 
     return (
-        <Page tite="Temperature">
+        <Page title="Temperature">
             <ListItem>
                 <Picker type="dropdown" items={controller.units} />
                 <TextField alignment="left" setter={setValue}>{value}</TextField>

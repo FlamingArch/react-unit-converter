@@ -4,7 +4,7 @@ const Page = ({ title, children }) => {
   return (
     <div className='page'>
       <div className="title">
-        Lorem ipsum
+        { title }
       </div>
       <div className="flex">
         {children}

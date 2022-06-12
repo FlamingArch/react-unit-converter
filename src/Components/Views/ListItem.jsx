@@ -1,8 +1,10 @@
 import React from 'react'
 
-const ListItem = () => {
+const ListItem = ({ children, input }) => {
   return (
-    <div>ListItem</div>
+    <div className={`listitem ${input ? `input` : ``}`}>
+      {children}
+    </div>
   )
 }
 

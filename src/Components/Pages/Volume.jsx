@@ -15,7 +15,7 @@ const VolumePage = () => {
     const controller = new Volumes();
 
     return (
-        <Page tite="Volume">
+        <Page title="Volume">
             <ListItem>
                 <Picker type="dropdown" items={controller.units} />
                 <TextField alignment="left" setter={setValue}>{value}</TextField>

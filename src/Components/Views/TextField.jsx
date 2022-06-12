@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const TextField = () => {
+const TextField = ({ alignment, text, onChange }) => {
   return (
-    <div>TextField</div>
+    <input style={{ textAlign: alignment }} className='textfield' onChange={(e) => onChange(e.target.value)} placeholder="Enter Value" />
   )
 }
 

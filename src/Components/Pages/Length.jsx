@@ -15,11 +15,26 @@ const LengthPage = () => {
     const controller = new Lengths();
 
     return (
-        <Page tite="Length">
-            <ListItem>
+        <Page title="Length">
+            <ListItem input={true}>
                 <Picker type="dropdown" items={controller.units} />
-                <TextField alignment="left" setter={setValue}>{value}</TextField>
+                <TextField type="number" alignment="left" text={`${value}`} onChange={(e) => {
+                    setValue(_.toNumber(e));
+                    console.log(value);
+                }} />
             </ListItem>
+            <ListItem>Sample</ListItem>
+            <ListItem>Sample</ListItem>
+            <ListItem>Sample</ListItem>
+            <ListItem>Sample</ListItem>
+            <ListItem>Sample</ListItem>
+            <ListItem>Sample</ListItem>
+            <ListItem>Sample</ListItem>
+            <ListItem>Sample</ListItem>
+            <ListItem>Sample</ListItem>
+            <ListItem>Sample</ListItem>
+            <ListItem>Sample</ListItem>
+            <ListItem>Sample</ListItem>
             {controller.units.map((e, idx) => {
                 <ListItem id={idx}>
                     <Text type="primary">{_.replace(_.startCase(e), "-", " ")}</Text>

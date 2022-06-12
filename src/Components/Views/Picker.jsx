@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Picker = () => {
+const Picker = ({ items, selected }) => {
   return (
-    <div>Picker</div>
+    <div>{items[selected]}</div>
   )
 }
 

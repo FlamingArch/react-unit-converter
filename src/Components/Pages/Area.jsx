@@ -15,7 +15,7 @@ const AreaPage = () => {
     const controller = new Areas();
 
     return (
-        <Page tite="Area">
+        <Page title="Area">
             <ListItem>
                 <Picker type="dropdown" items={controller.units} />
                 <TextField alignment="left" setter={setValue}>{value}</TextField>
