@@ -10,7 +10,7 @@ import Picker from '../Views/Picker';
 
 const LengthPage = () => {
     const [value, setValue] = useState(0.0);
-    const [unit, setUnit] = useState(0.0);
+    const [unit, setUnit] = useState("meters");
 
     const controller = new Lengths();
 
@@ -19,7 +19,12 @@ const LengthPage = () => {
     return (
         <Page title="Length">
             <ListItem input={true}>
-                <Picker type="dropdown" items={controller.units} />
+                <Picker
+                    type="dropdown"
+                    items={controller.units.map(e => _.capitalize(e))}
+                    selected={controller.units.indexOf(unit)}
+                />
+                {/* <Text>Sup {value}</Text> */}
                 <TextField type="number" alignment="left" text={`${value}`} onChange={(e) => {
                     setValue(_.toNumber(e));
                     console.log(value);
