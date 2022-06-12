@@ -1,23 +1,33 @@
 import React from "react";
-import Rail from "./Components/Rail";
+
+import LengthIcon from './Icons/length.svg'
+import AreaIcon from './Icons/area.svg'
+import VolumeIcon from './Icons/volume.svg'
+import TemperatureIcon from './Icons/temperature.svg'
+
+import LengthPage from './Components/Pages/Length'
+import AreaPage from './Components/Pages/Area'
+import VolumePage from './Components/Pages/Volume'
+import TemperaturePage from './Components/Pages/Temperature'
+
+import Navigation from './Components/Views/Navigation'
 
 const App = () => {
-  const iconStyles = "w-4 h-4 text-white";
 
-  const navigtionItems = [
+  const navigationItems = [
     { icon: LengthIcon, label: "Length" },
     { icon: AreaIcon, label: "Area" },
     { icon: VolumeIcon, label: "Volume" },
-    { icon: TemperatureIcon, label: "Temperature" },
+    { icon: TemperatureIcon, label: "Temp" },
   ]
 
   return (
-    <RailNavigation items={navigationIcons}>
-      <LengthPage/>
-      <AreaPage/>
-      <VolumePage/>
-      <TemperaturePage/>
-    </RailNavigation >
+    <Navigation items={navigationItems}>
+      <LengthPage />
+      <AreaPage />
+      <VolumePage />
+      <TemperaturePage />
+    </Navigation >
   );
 };
 

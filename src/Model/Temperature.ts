@@ -29,4 +29,9 @@ export default class Temperatures {
         return this.celsius + 273.15;
     }
   }
+
+  convertValue = (val: number, in_unit: string, out_unit: string) => {
+    this.setValues(in_unit, val);
+    return this.getValues(out_unit);
+  }
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Temperatures from '../../Model/Temperature';
 import _ from "lodash"
 
-const Temperature = () => {
+const TemperaturePage = () => {
     const [text, setText] = useState(0.0);
 
     const controller = new Temperatures();
@@ -23,4 +23,4 @@ const Temperature = () => {
     )
 }
 
-export default Temperature
+export default TemperaturePage

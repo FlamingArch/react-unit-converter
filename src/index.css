@@ -4,11 +4,64 @@
 @tailwind components;
 @tailwind utilities;
 
-.rail {
+
+.navbar {
   display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto;
-  width: auto;
-  height: auto;
+  grid-template-rows: 1fr auto 1fr;
+  height: 100vh;
+  min-width: 5rem;
 }
 
+.navbar .nav-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.navbaritem {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  width: 5rem;
+  height: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: center;
+  color: #1C1B1F;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+.navbaritem .icon-container {
+  padding: 0.25rem 1rem;
+  border-radius: 5rem;
+  transition: all 0.2s ease-in-out;
+  stroke: #1C1B1F;
+  fill: #1C1B1F;
+  background: #00000000;
+}
+
+.navbaritem .icon-container:hover {
+  background-color: #ddd;
+}
+
+.navbaritem .icon-container.active {
+  background-color: #E8DEF8;
+}
+
+.navbaritem .icon-container.active:hover {
+  background-color: hsl(263, 55%, 82%);
+}
+
+.navbaritem .label.hideUnactiveLabel {
+  display: none;
+}
+
+.navbaritem .label.active {
+  display: block;
+}
+
+.navbaritem .icon-container .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}

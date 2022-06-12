@@ -5,7 +5,7 @@ export default class Area {
 
   constructor() { }
 
-  setValue(unit: string, val: number) {
+  setValues(unit: string, val: number) {
     switch (unit.toLowerCase()) {
       case "meter-square":
         this.metersq = val;
@@ -28,7 +28,7 @@ export default class Area {
     }
   }
 
-  getValue(unit: string) {
+  getValues(unit: string) {
     switch (unit.toLowerCase()) {
       case "meter-square":
         return this.metersq;
@@ -43,5 +43,10 @@ export default class Area {
       case "yards-square":
         return this.metersq / 0.83612736;
     }
+  }
+
+  convertValue = (val: number, in_unit: string, out_unit: string) => {
+    this.setValues(in_unit, val);
+    return this.getValues(out_unit);
   }
 }

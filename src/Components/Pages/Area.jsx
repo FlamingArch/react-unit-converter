@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Areas from '../../Model/Area';
 import _ from "lodash"
 
-const Area = () => {
+const AreaPage = () => {
     const [text, setText] = useState(0.0);
 
     const controller = new Areas();
@@ -23,4 +23,4 @@ const Area = () => {
     )
 }
 
-export default Area
+export default AreaPage

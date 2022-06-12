@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Volumes from '../../Model/Volume';
 import _ from "lodash"
 
-const Volume = () => {
+const VolumePage = () => {
     const [text, setText] = useState(0.0);
 
     const controller = new Volumes();
@@ -23,4 +23,4 @@ const Volume = () => {
     )
 }
 
-export default Volume
+export default VolumePage

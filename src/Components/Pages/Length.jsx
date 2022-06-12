@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Lengths from '../../Model/Length';
 import _ from "lodash"
 
-const Length = () => {
+const LengthPage = () => {
     const [text, setText] = useState(0.0);
 
     const controller = new Lengths();
@@ -23,4 +23,4 @@ const Length = () => {
     )
 }
 
-export default Length
+export default LengthPage
