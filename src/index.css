@@ -86,7 +86,7 @@
 }
 
 .navbaritem .icon-container.active:hover {
-  background-color: hsl(263, 55%, 82%);
+  background-color: hsl(263, 55%, 72%);
 }
 
 .navbaritem .label.hideUnactiveLabel {
@@ -105,4 +105,27 @@
 .page {
   width: auto;
   height: 100vh;
+}
+
+.page .title {
+  display: none;
+  height: 4rem;
+  font-size: 1.375rem;
+  align-items: center;
+  justify-content: center;
+  padding-right: 5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .page .title {
+    display: flex;
+    padding-right: 0px;
+  }
+}
+
+.page .flex {
+  display: flex;
+  width: auto;
+  align-items: center;
+  flex-direction: column;
 }
